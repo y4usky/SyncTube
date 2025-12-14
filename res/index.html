@@ -15,9 +15,50 @@
   <link id="customcss" href="css/custom.css" rel="stylesheet">
   <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule="" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js"></script>
+
+  <!-- 🔥 TUTAJ DODAŁEM STYLE UKRYWAJĄCE CZAT 🔥 -->
+  <style>
+    /* Ukrywamy cały panel boczny (czat, lista userów, ustawienia) */
+    #chat {
+        display: none !important;
+    }
+
+    /* Ukrywamy suwak między oknami (bo nie ma już czego przesuwać) */
+    .gutter {
+        display: none !important;
+    }
+
+    /* Ukrywamy stopkę */
+    #footer {
+        display: none !important;
+    }
+
+    /* Naprawiamy główny widok */
+    body {
+        /* Nadpisujemy ustawienia siatki, żeby było na jedną kolumnę */
+        grid-template-columns: 1fr !important;
+        display: block !important;
+        overflow-y: auto !important; /* Pozwalamy przewijać, jeśli playlista będzie długa */
+    }
+
+    /* Rozciągamy sekcję wideo i playlisty na 100% */
+    main#video {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+
+    /* Upewniamy się, że playlista jest widoczna i ładna */
+    #playlist {
+        width: 100% !important;
+        display: block !important;
+    }
+  </style>
 </head>
 
-<body style="grid-template-columns: 1fr 4px 300px;">
+<!-- ZMIENIŁEM STYLE W BODY, ŻEBY NIE DZIELIŁO NA KOLUMNY -->
+<body style="display: block; margin: 0; padding: 0;">
   <!-- Video -->
   <main id="video">
     <!-- Player -->
@@ -150,10 +191,10 @@
     </footer>
   </main>
 
-  <!-- Gutter -->
+  <!-- Gutter (Ukryty przez CSS) -->
   <div class="gutter"></div>
 
-  <!-- Chat -->
+  <!-- Chat (Ukryty przez CSS - musi tu zostać w kodzie, żeby JS się nie wywalił) -->
   <aside id="chat">
     <!-- Chat controls -->
     <div class="controls">
