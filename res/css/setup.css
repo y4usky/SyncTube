@@ -47,3 +47,36 @@ body {
   gap: 0.5rem;
   color: var(--error);
 }
+/* --- UKRYWANIE CZATU I LISTY OSÓB --- */
+#chatwrap, #chatheader {
+    display: none !important;
+}
+
+#userlist {
+    display: none !important;
+}
+
+/* --- ROZCIĄGANIE PLAYERA NA CAŁĄ SZEROKOŚĆ --- */
+/* Zmuszamy kolumnę z filmem, żeby zajęła 100% miejsca po usuniętym czacie */
+.col-lg-9, .col-md-8 {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 100% !important;
+}
+
+/* Ukrywamy pustą kolumnę po prawej (gdzie był czat) */
+.col-lg-3, .col-md-4 {
+    display: none !important;
+}
+
+/* --- ZABEZPIECZENIE PLAYLISTY (REQUESTÓW) --- */
+/* Upewniamy się, że sekcja "controls" i playlista pod filmem są widoczne */
+#controlsrow, #playlistrow {
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Opcjonalnie: ukryj navbar na górze, żeby było czysto w ramce */
+.navbar {
+    display: none !important;
+}
